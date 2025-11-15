@@ -26,7 +26,7 @@ A RESTful API built with Node.js, Express and MongoDB for managing video content
 - Password hashing with bcrypt
 - CRUD operations for videos — create, read, update, delete
 - Video metadata management: like/dislike, comments, subscriptions, history
-- File upload handling (video, profile, thumbnail  uploads) with Multer and cloud storage using cloudinary
+- File upload handling (video, profile, thumbnail uploads) with Multer and cloud storage using cloudinary
 - Pagination, filtering and full text search support
 - Clean API response structure
 - Well-defined MongoDB schemas for users, videos, comments, playlists, likes, subscriptions
@@ -106,8 +106,6 @@ The server should start and listen on the configured `PORT`. You can test endpoi
 - Endpoints for comments
 - Endpoints for subscriptions
 - Endpoints for viewing history
-
-> Note: Replace `/api/videos` with the actual route your project uses (e.g., `/api/tasks` if the model is named differently).
 
 <!--
 ## Database Schema
