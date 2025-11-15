@@ -1,4 +1,3 @@
-````markdown
 # YouTube Backend Clone
 
 A RESTful API built with Node.js, Express and MongoDB for managing video content such as upload, fetch, likes/dislikes, comments and playlists — inspired by YouTube.
@@ -13,25 +12,24 @@ A RESTful API built with Node.js, Express and MongoDB for managing video content
   - [Configuration](#configuration)
   - [Run the application](#run-the-application)
 - [API Endpoints](#api-endpoints)
-- [Database Schema](#database-schema)
 - [Authentication & Authorization](#authentication--authorization)
 - [Pagination, Filtering & Search](#pagination-filtering--search)
 - [File Uploads](#file-uploads)
 - [Project Structure](#project-structure)
-- [Future Improvements](#future-improvements)
-- [License](#license)
-- [Contact](#contact)
+  <!-- - [Future Improvements](#future-improvements) -->
+  <!-- - [License](#license) -->
+  <!-- - [Contact](#contact) -->
 
 ## Features
 
 - User signup and login with secure authentication (JWT, access & refresh tokens)
 - Password hashing with bcrypt
-- CRUD operations for tasks (videos) — create, read, update, delete
+- CRUD operations for videos — create, read, update, delete
 - Video metadata management: like/dislike, comments, subscriptions, history
-- File upload handling (video uploads) with Multer and optionally cloud storage (Cloudinary)
+- File upload handling (video, profile, thumbnail  uploads) with Multer and cloud storage using cloudinary
 - Pagination, filtering and full text search support
 - Clean API response structure
-- Well-defined MongoDB schemas for users, videos, comments, playlists
+- Well-defined MongoDB schemas for users, videos, comments, playlists, likes, subscriptions
 
 ## Tech Stack
 
@@ -42,7 +40,7 @@ A RESTful API built with Node.js, Express and MongoDB for managing video content
 - bcrypt for password hashing
 - Multer for file uploads
 - Cloudinary for storing video files
-- Postman (or any API client) for API testing
+- Postman for API testing
 - dotenv for environment configuration
 
 ## Getting Started
@@ -50,8 +48,8 @@ A RESTful API built with Node.js, Express and MongoDB for managing video content
 ### Prerequisites
 
 - Node.js (version 14 or above)
-- MongoDB (either local or cloud instance)
-- (Optional) Cloudinary account for video uploads
+- MongoDB
+- Cloudinary account for video uploads
 
 ### Installation
 
@@ -60,27 +58,28 @@ git clone https://github.com/Nabin-sth/yt-backend-API.git
 cd yt-backend-API
 npm install
 ```
-````
 
 ### Configuration
 
 Create a `.env` file in the root folder and provide the following environment variables:
 
 ```
+
 PORT=5000
 MONGODB_URI=<your_mongodb_connection_string>
-CORS_ORIGIN=<set>
+CORS_ORIGIN=<set_cors_origin>
 REFRESH_TOKEN_SECRET=<your_refresh_token_secret>
 REFRESH_TOKEN_EXPIRY=<refresh_token_expiry>
 ACCESS_TOKEN_SECRET=<your_access_token_secret>
 ACCESS_TOKEN_EXPIRY=<access_token_expiry>
 CLOUDINARY_URL=<cloudinary_url>
+
 ```
 
 ### Run the Application
 
 ```bash
-npm run dev      # For development with nodemon (if configured)
+npm run dev      # For development with nodemon
 npm start        # For production
 ```
 
