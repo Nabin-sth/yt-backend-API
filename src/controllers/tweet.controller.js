@@ -8,7 +8,7 @@ import { asyncHandler } from "../utils/asyncHandler.js";
 const createTweet = asyncHandler(async (req, res) => {
   //TODO: create tweet
   const userId = req.user?._id;
-  const {content} = req.body;
+  const { content } = req.body;
   const tweet = await Tweet.create({
     content,
     owner: userId,
@@ -19,7 +19,7 @@ const createTweet = asyncHandler(async (req, res) => {
 const getUserTweets = asyncHandler(async (req, res) => {
   // TODO: get user tweets
   //   const userId = req.user?._id;
-  const {userId} = req.params;
+  const { userId } = req.params;
 
   const tweets = await Tweet.find({ owner: userId });
   return res
@@ -30,8 +30,8 @@ const getUserTweets = asyncHandler(async (req, res) => {
 const updateTweet = asyncHandler(async (req, res) => {
   //TODO: update tweet
 
-  const {tweetId} = req.params;
-  const {content} = req.body;
+  const { tweetId } = req.params;
+  const { content } = req.body;
   const update = await Tweet.findByIdAndUpdate(
     tweetId,
     { content },
@@ -44,7 +44,7 @@ const updateTweet = asyncHandler(async (req, res) => {
 
 const deleteTweet = asyncHandler(async (req, res) => {
   //TODO: delete tweet
-  const {tweetId} = req.params;
+  const { tweetId } = req.params;
   const deletedTweet = await Tweet.findByIdAndDelete(tweetId);
   return res
     .status(200)
